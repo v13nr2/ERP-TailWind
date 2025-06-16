@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Accounting • ERP PWA</title>
+
+  <!-- PWA essentials -->
+  <meta name="theme-color" content="#10b981" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- (opsional) Hilangkan highlight di mobile -->
+  <style>
+    body{-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-green-200 via-green-400 to-green-600 text-gray-800">
+
+  <!-- App-bar -->
+  <header class="bg-green-600 text-white flex items-center justify-between px-4 py-3 shadow-md">
+    <h1 class="text-lg font-semibold">Accounting</h1>
+    <a href="index.html" aria-label="Home">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
+      </svg>
+    </a>
+  </header>
+
+  <!-- Konten -->
+  <main class="flex-1 overflow-y-auto p-4">
+    <!-- CARD -->
+    <div class="bg-white rounded-xl shadow-lg p-4">
+
+      <!-- Accordion 1 : Transaksi -->
+      <button type="button"
+        class="w-full flex justify-between items-center py-3 px-2 text-left font-semibold text-green-700 focus:outline-none"
+        data-toggle="accordion">
+        <span>Transaksi</span>
+        <svg class="w-5 h-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.19l3.71-3.96a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <ul class="space-y-2 pl-6 pb-3 hidden">
+        <li><a href="kas-masuk.html"   class="block py-1 hover:text-green-600">Kas Masuk</a></li>
+        <li><a href="kas-keluar.html"  class="block py-1 hover:text-green-600">Kas Keluar</a></li>
+        <li><a href="jurnal-umum.html" class="block py-1 hover:text-green-600">Jurnal Umum</a></li>
+      </ul>
+
+      <!-- Divider -->
+      <hr class="my-2 border-gray-200">
+
+      <!-- Accordion 2 : Laporan -->
+      <button type="button"
+        class="w-full flex justify-between items-center py-3 px-2 text-left font-semibold text-green-700 focus:outline-none"
+        data-toggle="accordion">
+        <span>Laporan</span>
+        <svg class="w-5 h-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.19l3.71-3.96a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <ul class="space-y-2 pl-6 pb-3 hidden list-decimal list-inside text-sm">
+        <li><a href="lap-jurnal.html"          class="hover:text-green-600">Jurnal</a></li>
+        <li><a href="lap-buku-besar.html"     class="hover:text-green-600">Buku Besar</a></li>
+        <li><a href="lap-neraca-saldo.html"   class="hover:text-green-600">Neraca Saldo</a></li>
+        <li><a href="lap-laba-rugi.html"      class="hover:text-green-600">Laba Rugi</a></li>
+        <li><a href="lap-perubahan-modal.html"class="hover:text-green-600">Perubahan Modal</a></li>
+        <li><a href="lap-neraca-akhir.html"   class="hover:text-green-600">Neraca Akhir</a></li>
+      </ul>
+
+    </div>
+  </main>
+
+  <!-- Footer (bisa disesuaikan) -->
+  <footer class="bg-white border-t border-gray-200 p-2 text-xs flex justify-center">
+    <span class="text-gray-500">&copy; 2025 ERP-PWA</span>
+  </footer>
+
+  <!-- Script sederhana untuk accordion -->
+  <script>
+    document.querySelectorAll('[data-toggle="accordion"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const list = btn.nextElementSibling
+        list.classList.toggle('hidden')
+        btn.querySelector('svg').classList.toggle('rotate-180')
+      })
+    })
+  </script>
+</body>
+</html>
