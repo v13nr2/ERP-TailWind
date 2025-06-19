@@ -48,7 +48,7 @@
         <!-- Username -->
         <div>
           <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-          <input type="text" id="username" name="username" required value="farming@farming.com"
+          <input type="text" id="username" name="username" required value="nanang1"
                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500" />
         </div>
 
@@ -151,7 +151,7 @@ function login() {
       console.log("Login berhasil:", response);
       showToast("Login Berhasil");
       localStorage.setItem("token", response.token);
-      // window.location.href = "dashboard.html";
+      window.location.href = "dashboard.html";
     },
     error: function (xhr) {
       //const res = xhr.responseJSON;
