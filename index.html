@@ -134,34 +134,33 @@ function showToast(message) {
 }
 
 function login() {
+  // Kumpulkan data input
   const dataLogin = {
     username: $("#username").val(),
     password: $("#password").val()
   };
 
   $.ajax({
-    url: 'https://api.jogjaide.web.id/api/user/login',
-    type: 'POST',
+    url: "http://157.15.125.249:8080/login",
+    type: "POST",
     headers: {
-      'x-api-key': '61C0941D15721ED273C3CD0482F389B1', // Ganti dengan API key asli jika ada
-      'Content-Type': 'application/x-www-form-urlencoded'
+      "Content-Type": "application/json"          // ⬅️ ganti ke JSON
     },
-    data: dataLogin,
-    success: function(response) {
+    data: JSON.stringify(dataLogin),               // ⬅️ kirim sebagai JSON string
+    success: function (response) {
       console.log("Login berhasil:", response);
-      // Simpan token atau data jika diperlukan
-	  const res = response.message;
-      showToast(res);
-      localStorage.setItem('token', response.token);
-	  window.location.href = "dashboard.html";
+      showToast("Login Berhasil");
+      localStorage.setItem("token", response.token);
+      // window.location.href = "dashboard.html";
     },
-    error: function(xhr) {
-      const res = xhr.responseJSON;
-      const msg = res?.message || "Terjadi kesalahan jaringan.";
-      showToast(msg);
+    error: function (xhr) {
+      //const res = xhr.responseJSON;
+      //const msg = res?.message || "Terjadi kesalahan jaringan.";
+      showToast("Login Gagal");
     }
   });
 }
+
 </script>
 
 
