@@ -121,6 +121,7 @@
 
 <!-- Tambahkan jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/config.js"></script>
 
 <script>
 
@@ -141,7 +142,7 @@ function login() {
   };
 
   $.ajax({
-    url: "http://157.15.125.249:8080/login",
+    url: server_api + "/login",
     type: "POST",
     headers: {
       "Content-Type": "application/json"          // ⬅️ ganti ke JSON
