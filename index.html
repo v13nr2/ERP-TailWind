@@ -145,19 +145,19 @@ function login() {
     url: server_api + "/login",
     type: "POST",
     headers: {
-      "Content-Type": "application/json"          // ⬅️ ganti ke JSON
+      "x-api-key": "61C0941D15721ED273C3CD0482F389B1"  // ✅ API Key saja
     },
-    data: JSON.stringify(dataLogin),               // ⬅️ kirim sebagai JSON string
+    data: dataLogin,  // ✅ Kirim data sebagai form (bukan JSON)               // ⬅️ kirim sebagai JSON string
     success: function (response) {
       console.log("Login berhasil:", response);
-      showToast("Login Berhasil");
+      showToast(response.message);
       localStorage.setItem("token", response.token);
       window.location.href = "dashboard.html";
     },
     error: function (xhr) {
-      //const res = xhr.responseJSON;
-      //const msg = res?.message || "Terjadi kesalahan jaringan.";
-      showToast("Login Gagal");
+      const res = xhr.responseJSON;
+      const msg = res?.message || "Terjadi kesalahan jaringan.";
+      showToast(msg);
     }
   });
 }
