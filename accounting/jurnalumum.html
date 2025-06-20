@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Jurnal Umum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10b981'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-sm">
+
+  <!-- Top Navbar -->
+  <header class="bg-primary text-white p-4 shadow-md">
+    <div class="text-center font-semibold text-lg">Jurnal Umum</div>
+  </header>
+
+  <!-- Form Jurnal Umum -->
+  <main class="p-4">
+    <form class="bg-white p-4 rounded-xl shadow space-y-4">
+      <div>
+        <label class="block mb-1 font-medium text-gray-700">Tanggal Transaksi</label>
+        <input type="date" class="w-full border border-gray-300 p-2 rounded" required />
+      </div>
+
+      <div>
+        <label class="block mb-1 font-medium text-gray-700">Akun Debit</label>
+        <input type="text" placeholder="Contoh: Kas" class="w-full border border-gray-300 p-2 rounded" required />
+      </div>
+
+      <div>
+        <label class="block mb-1 font-medium text-gray-700">Nominal Debit</label>
+        <input type="number" placeholder="Contoh: 1000000" class="w-full border border-gray-300 p-2 rounded" required />
+      </div>
+
+      <div>
+        <label class="block mb-1 font-medium text-gray-700">Akun Kredit</label>
+        <input type="text" placeholder="Contoh: Penjualan" class="w-full border border-gray-300 p-2 rounded" required />
+      </div>
+
+      <div>
+        <label class="block mb-1 font-medium text-gray-700">Nominal Kredit</label>
+        <input type="number" placeholder="Contoh: 1000000" class="w-full border border-gray-300 p-2 rounded" required />
+      </div>
+
+      <div>
+        <label class="block mb-1 font-medium text-gray-700">Keterangan</label>
+        <textarea rows="3" class="w-full border border-gray-300 p-2 rounded" placeholder="Keterangan tambahan..."></textarea>
+      </div>
+
+      <button type="submit" class="bg-primary w-full py-2 text-white font-semibold rounded hover:bg-emerald-600 transition">
+        Simpan Transaksi
+      </button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white p-4 text-center mt-6">
+    <p class="text-xs">&copy; 2025 ERPN1 Mobile. Semua hak dilindungi.</p>
+  </footer>
+
+</body>
+</html>
