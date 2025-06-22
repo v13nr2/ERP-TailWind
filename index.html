@@ -100,7 +100,11 @@
 		</li>
 	  </ul>
 	</section>
-
+        <!-- Submit -->
+        <button type="button" onclick="loginrust()"  href="https://bit.ly/ErpRust"
+                class="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-md font-semibold transition">
+          Login ERP Rust
+        </button>
   <!-- Tambahkan Toast (Pakai Tailwind + simple JS) -->
 <style>
 .toast {
@@ -133,7 +137,9 @@ function showToast(message) {
     toast.fadeOut();
   }, 3000);
 }
-
+function loginrust(){
+    window.location.href = "https://bit.ly/ErpRust";
+}
 function login() {
   // Kumpulkan data input
   const dataLogin = {
@@ -142,7 +148,7 @@ function login() {
   };
 
   $.ajax({
-    url: server_api + "/login",
+    url: "https://api.jogjaide.web.id/api/user/login",
     type: "POST",
     headers: {
       "x-api-key": "61C0941D15721ED273C3CD0482F389B1"  // ✅ API Key saja
